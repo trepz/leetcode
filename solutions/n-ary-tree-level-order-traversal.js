@@ -33,7 +33,7 @@ function Node(val, children) {
  */
 
 // Recursive (slow) faster than 6%
-const levelOrder = root => {
+const levelOrder_slow = root => {
   const levels = {}
   const traverse = (node, depth) => {
     if (!node) return
@@ -48,6 +48,29 @@ const levelOrder = root => {
   }
   traverse(root, 1)
   return Object.values(levels)
+}
+
+// Faster than 22% - still bad
+const levelOrder = root => {
+  if (!root) return []
+  let levels = [[root]]
+  let depth = 0
+  while (depth > -1) {
+    let nextLevel = []
+    for (let i = 0; i < levels[depth].length; i++) {
+      if (!levels[depth][i]) continue
+      if (levels[depth][i].children.length) {
+        nextLevel = [...nextLevel, ...levels[depth][i].children]
+      }
+    }
+    if (nextLevel.length) {
+      levels.push(nextLevel)
+      depth++
+    } else {
+      depth = -1
+    }
+  }
+  return levels.map(x => x.map(y => (y ? y.val : y)))
 }
 
 // Cases
