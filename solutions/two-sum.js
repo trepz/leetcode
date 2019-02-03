@@ -22,12 +22,22 @@
  */
 
 // 52.32% faster
-const twoSum = (nums, target) => {
+const twoSum_1 = (nums, target) => {
   for (let i = 0; i < nums.length; i++) {
     let v = target - nums[i]
     for (let j = i + 1; j < nums.length; j++) {
       if (nums[j] === v) return [i, j]
     }
+  }
+}
+
+// 100% faster
+const twoSum = (nums, target) => {
+  const map = {}
+  for (let i = 0; i < nums.length; i++) {
+    const f = target - nums[i]
+    if (typeof map[f] !== 'undefined') return [map[f], i]
+    map[nums[i]] = i
   }
 }
 
