@@ -43,11 +43,9 @@ const twoSum = (nums, target) => {
 }
 
 // Cases
-console.time('two-sum')
 console.log(
   twoSum([2, 7, 11, 15], 9), // 0, 1
   twoSum([1, 8, 9, 10, 5], 15), // 3, 4
   twoSum([-1, -2, -3, -4, -5], -8), // 2, 4
   twoSum([-1, 100, -5, -40, 66], 61), // 2, 4
 )
-console.timeEnd('two-sum')
