@@ -51,7 +51,7 @@ const levelOrder_slow = root => {
 }
 
 // Faster than 22% - still bad
-const levelOrder = root => {
+const levelOrder_also_slow = root => {
   if (!root) return []
   let levels = [[root]]
   let depth = 0
@@ -71,6 +71,30 @@ const levelOrder = root => {
     }
   }
   return levels.map(x => x.map(y => (y ? y.val : y)))
+}
+
+// 96% faster - 50% memory
+const levelOrder = root => {
+  const levels = []
+  let queue = []
+  let currentLevel = []
+  let level = []
+  if (root) queue.push(root)
+  while (queue.length) {
+    currentLevel = queue
+    queue = []
+    currentLevel.forEach(node => {
+      if (node.children)
+        node.children.forEach(child => {
+          queue.push(child)
+        })
+      else return
+      level.push(node.val)
+    })
+    levels.push(level)
+    level = []
+  }
+  return levels
 }
 
 // Cases
