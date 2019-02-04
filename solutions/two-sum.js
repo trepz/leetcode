@@ -42,10 +42,9 @@ const twoSum = (nums, target) => {
   }
 }
 
-// Cases
-console.log(
-  twoSum([2, 7, 11, 15], 9), // 0, 1
-  twoSum([1, 8, 9, 10, 5], 15), // 3, 4
-  twoSum([-1, -2, -3, -4, -5], -8), // 2, 4
-  twoSum([-1, 100, -5, -40, 66], 61), // 2, 4
-)
+test('two sum', () => {
+  expect(twoSum([2, 7, 11, 15], 9)).toEqual([0, 1])
+  expect(twoSum([1, 8, 9, 10, 5], 15)).toEqual([3, 4])
+  expect(twoSum([-1, -2, -3, -4, -5], -8)).toEqual([2, 4])
+  expect(twoSum([-1, 100, -5, -40, 66], 61)).toEqual([2, 4])
+})

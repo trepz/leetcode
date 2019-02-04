@@ -50,3 +50,9 @@ const sumEvenAfterQueries = (A, queries) => {
   })
   return res
 }
+
+test('sum of even numbers after queries', () => {
+  expect(
+    sumEvenAfterQueries([1, 2, 3, 4], [[1, 0], [-3, 1], [-4, 0], [2, 3]]),
+  ).toEqual([8, 6, 2, 4])
+})

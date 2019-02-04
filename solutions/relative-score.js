@@ -8,7 +8,7 @@
  *
  * Example 1:
  * Input: [5, 4, 3, 2, 1]
- * Output: ["Gold Medal", "Silver Medal", "Bronze Medal", "4", "5"]
+ * Output:
  *
  * Explanation: The first three athletes got the top three highest scores,
  * so they got "Gold Medal", "Silver Medal" and "Bronze Medal".
@@ -42,6 +42,12 @@ const findRelativeRanks = nums => {
   return nums
 }
 
-// Cases
-findRelativeRanks([5, 4, 3, 2, 1])
-findRelativeRanks([2, 10, 1, 9180, 30, 200, 5, 7, 99])
+test('relative score', () => {
+  expect(findRelativeRanks([5, 4, 3, 2, 1])).toEqual([
+    'Gold Medal',
+    'Silver Medal',
+    'Bronze Medal',
+    '4',
+    '5',
+  ])
+})

@@ -53,11 +53,8 @@ const numJewelsInStones = (J = '', S = '') => {
 }
 
 // Cases
-console.log(
-  'Case 1: ',
-  numJewelsInStones('aA', 'aAAbbbb'),
-  'Case 2: ',
-  numJewelsInStones('z', 'ZZ'),
-  'Case 3: ',
-  numJewelsInStones('', ''),
-)
+test('jewels and stones', () => {
+  expect(numJewelsInStones('aA', 'aAAbbbb')).toBe(3)
+  expect(numJewelsInStones('z', 'ZZ')).toBe(0)
+  expect(numJewelsInStones('', '')).toBe(0)
+})

@@ -101,21 +101,23 @@ const levelOrder = root => {
 }
 
 // Cases
-console.log(
-  levelOrder({
-    $id: '1',
-    children: [
-      {
-        $id: '2',
-        children: [
-          { $id: '5', children: [], val: 5 },
-          { $id: '6', children: [], val: 6 },
-        ],
-        val: 3,
-      },
-      { $id: '3', children: [], val: 2 },
-      { $id: '4', children: [], val: 4 },
-    ],
-    val: 1,
-  }),
-)
+test('n-ary tree level order traversal', () => {
+  expect(
+    levelOrder({
+      $id: '1',
+      children: [
+        {
+          $id: '2',
+          children: [
+            { $id: '5', children: [], val: 5 },
+            { $id: '6', children: [], val: 6 },
+          ],
+          val: 3,
+        },
+        { $id: '3', children: [], val: 2 },
+        { $id: '4', children: [], val: 4 },
+      ],
+      val: 1,
+    }),
+  ).toEqual([[1], [3, 2, 4], [5, 6]])
+})
