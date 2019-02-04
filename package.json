@@ -1,0 +1,12 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/trepz/leetcode.git",
+  "author": "trepz",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jest": "^24.0.0"
+  }
+}
