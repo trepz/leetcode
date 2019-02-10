@@ -48,9 +48,8 @@ const numJewelsInStones_map = (J = '', S = '') => {
 }
 
 // Split version 100% faster, 50% memory
-const numJewelsInStones = (J = '', S = '') => {
-  return J.split('').reduce((a, c) => a + (S.split(c).length - 1), 0)
-}
+const numJewelsInStones = (J = '', S = '') =>
+  J.split('').reduce((a, c) => a + (S.split(c).length - 1), 0)
 
 // Cases
 test('jewels and stones', () => {
